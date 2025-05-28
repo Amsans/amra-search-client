@@ -246,14 +246,20 @@ header p {
     100% { transform: rotate(360deg); }
 }
 
-/* Theme Switch Styles */
-.theme-switch-container {
+/* Header Controls */
+.header-controls {
     display: flex;
     align-items: center;
     position: absolute;
     top: 1rem;
     left: 1rem;
-    z-index: 10;
+    gap: 1rem;
+}
+
+/* Theme Switch Styles */
+.theme-switch-container {
+    display: flex;
+    align-items: center;
 }
 
 .theme-switch {
@@ -307,6 +313,23 @@ input:checked + .slider:before {
     font-size: 0.9rem;
 }
 
+/* Calendar Link Styles */
+.calendar-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.calendar-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
@@ -314,6 +337,11 @@ input:checked + .slider:before {
 
     header h1 {
         font-size: 2rem;
+    }
+
+    .header-controls {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     .result-meta {
