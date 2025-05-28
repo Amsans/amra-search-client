@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Reset custom validity when user starts typing
+    // Reset custom validity when a user starts typing
     searchInput.addEventListener('input', function() {
         this.setCustomValidity('');
     });
@@ -233,9 +233,9 @@ function updatePagination() {
 // This function needs to be global for the onclick handlers in pagination
 window.changePage = function(page) {
     currentOffset = (page - 1) * RESULTS_PER_PAGE;
-    fetchResults();
+    fetchResults().then(r => {});
 
-    // Scroll back to top of results
+    // Scroll back to the top of results
     searchResults.scrollIntoView({ behavior: 'smooth' });
 };
 

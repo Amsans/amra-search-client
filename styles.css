@@ -214,9 +214,28 @@ header p {
     border-color: var(--primary-color);
 }
 
+/* Improved contrast for pagination buttons in dark theme */
+[data-theme="dark"] .pagination-button {
+    background-color: var(--medium-gray);
+    color: var(--text-color);
+    border-color: var(--dark-gray);
+}
+
+[data-theme="dark"] .pagination-button:hover {
+    background-color: var(--dark-gray);
+    color: white;
+}
+
 .pagination-button.disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+/* Ensure active pagination button has good contrast in dark theme */
+[data-theme="dark"] .pagination-button.active {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-color: var(--primary-color);
 }
 
 .loading {
