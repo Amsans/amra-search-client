@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Амра Поиск</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Амра Поиск</h1>
+            <p>Поиск по текстам пандэкта "Эрма" Учения Единого Храма</p>
+            <div class="theme-switch-container">
+                <span class="theme-icon">☀️</span>
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="theme-icon">🌙</span>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <form id="search-form">
+                <div class="search-input-container">
+                    <input type="text" id="search-input" placeholder="Введите искомый текст..." required>
+                    <button type="submit" id="search-button">Искать</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="results-container">
+            <div id="search-stats" class="search-stats"></div>
+            <div id="search-results" class="search-results"></div>
+            <div id="pagination" class="pagination"></div>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
