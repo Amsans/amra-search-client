@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE_URL = 'http://amsan.duckdns.org:3000'; // Replace with your actual API URL, e.g., 'https://api.example.com'
+const API_BASE_URL = 'http://amsan.duckdns.org:3000';
 const RESULTS_PER_PAGE = 10;
 
 // DOM Elements
@@ -36,7 +36,7 @@ function toggleTheme() {
 }
 
 function initTheme() {
-    // Set dark theme as default
+    // Set the dark theme as default
     const savedTheme = localStorage.getItem('darkTheme');
     const isDark = savedTheme !== null ? savedTheme === 'true' : true;
     setTheme(isDark);
@@ -87,6 +87,7 @@ async function fetchResults() {
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
+            // noinspection ExceptionCaughtLocallyJS
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
@@ -111,7 +112,7 @@ async function fetchResults() {
 
 function processResults(data) {
     // Extract data from the response
-    const { took, timed_out, _shards, hits } = data;
+    const { hits } = data;
 
     // Update state
     // Handle both formats: hits.total as a number or as an object with a value property
@@ -140,7 +141,7 @@ function displaySearchResults(results) {
 
     searchResults.innerHTML = results.map(result => {
         const { _source, highlight } = result;
-        const { book, author, miteuma, enon, text, url } = _source;
+        const { book, author, miteuma, enon, url } = _source;
 
         // Create highlights HTML
         const highlightsHtml = highlight.text
