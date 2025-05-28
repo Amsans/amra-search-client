@@ -47,6 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
     searchForm.addEventListener('submit', handleSearch);
     themeToggle.addEventListener('change', toggleTheme);
     initTheme();
+
+    searchInput.addEventListener('invalid', function() {
+        if (!this.value.trim()) {
+            this.setCustomValidity('Пожалуйста, введите текст для поиска');
+        }
+    });
+
+    // Reset custom validity when user starts typing
+    searchInput.addEventListener('input', function() {
+        this.setCustomValidity('');
+    });
 });
 
 // Functions
