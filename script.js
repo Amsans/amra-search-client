@@ -22,17 +22,18 @@ let currentResults = [];
 function setTheme(isDark) {
     if (isDark) {
         document.documentElement.setAttribute('data-theme', 'dark');
-        themeToggle.checked = true;
+        themeToggle.textContent = '☀️'; // Sun emoji for dark mode
     } else {
         document.documentElement.removeAttribute('data-theme');
-        themeToggle.checked = false;
+        themeToggle.textContent = '🌙'; // Moon emoji for light mode
     }
     localStorage.setItem('darkTheme', isDark);
 }
 
 function toggleTheme() {
-    const isDark = themeToggle.checked;
-    setTheme(isDark);
+    // Check current theme and toggle it
+    const isDark = document.documentElement.hasAttribute('data-theme');
+    setTheme(!isDark);
 }
 
 function initTheme() {
@@ -45,7 +46,7 @@ function initTheme() {
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     searchForm.addEventListener('submit', handleSearch);
-    themeToggle.addEventListener('change', toggleTheme);
+    themeToggle.addEventListener('click', toggleTheme);
     initTheme();
 
     searchInput.addEventListener('invalid', function() {
@@ -99,7 +100,7 @@ async function fetchResults() {
         console.error('Error fetching search results:', error);
         searchResults.innerHTML = `
             <div class="error-message">
-                <p>Во время поиска произошла ошибка. Пожалуйста, попробуйте позже.</p>
+                <p>❌Во время поиска произошла ошибка. Пожалуйста, попробуйте позже.</p>
                 <p>Детали ошибки: ${error.message}</p>
             </div>
         `;
