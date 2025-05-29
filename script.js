@@ -31,7 +31,7 @@ function setTheme(isDark) {
 }
 
 function toggleTheme() {
-    // Check current theme and toggle it
+    // Check the current theme and toggle it
     const isDark = document.documentElement.hasAttribute('data-theme');
     setTheme(!isDark);
 }
@@ -234,7 +234,7 @@ function updatePagination() {
 // This function needs to be global for the onclick handlers in pagination
 window.changePage = function(page) {
     currentOffset = (page - 1) * RESULTS_PER_PAGE;
-    fetchResults().then(r => {});
+    fetchResults().then(() => {});
 
     // Scroll back to the top of results
     searchResults.scrollIntoView({ behavior: 'smooth' });
