@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE_URL = 'http://amsan.duckdns.org:3000';
+const API_BASE_URL = 'https://amsan.duckdns.org';
 const RESULTS_PER_PAGE = 10;
 
 // DOM Elements
