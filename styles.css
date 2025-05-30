@@ -296,6 +296,14 @@ header p {
     justify-content: center;
 }
 
+.theme-icon-button:hover {
+    transform: scale(1.1);
+    background-color: var(--light-gray);
+}
+
+.theme-icon-button:focus {
+    outline: none;
+}
 
 /* Calendar Link Styles */
 .calendar-link {

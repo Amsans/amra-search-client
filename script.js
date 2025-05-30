@@ -101,7 +101,7 @@ async function fetchResults() {
         searchResults.innerHTML = `
             <div class="error-message">
                 <p>❌Во время поиска произошла ошибка. Пожалуйста, попробуйте позже.</p>
-                <p>Детали ошибки: ${error.message}</p>
+                <p>Детали ошибки: ${error.stack}</p>
             </div>
         `;
         searchStats.textContent = '';
