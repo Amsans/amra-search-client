@@ -45,6 +45,7 @@ function initTheme() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
+    searchInput.focus()
     searchForm.addEventListener('submit', handleSearch);
     themeToggle.addEventListener('click', toggleTheme);
     initTheme();
